@@ -22,11 +22,11 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         $content = [];
-        if ($text = 'flash ค่าบริการ') {
+        if (strcmp($text, 'flash ค่าบริการ') == 0) {
             $content = ['type' => 'image', 
                         'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYeHuV.jpg', 
                         'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYe8RN.jpg' ];
-        } elseif ($text = 'hi') {
+        } elseif (strcmp($text, 'hi') == 0) {
             $content = ['type' => 'text', 'text' => $text ];
         }
         
