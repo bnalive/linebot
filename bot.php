@@ -21,16 +21,29 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        $data = [
-            'replyToken' => $reply_token,
-            // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
-            'messages' => [['type' => 'text', 'text' => $text ]]
-        ];
-        $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+        $content = [];
+        if ($text = 'flash ค่าบริการ') {
+            $content = ['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYeHuV.jpg', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYe8RN.jpg' ];
+        } elseif ($text = 'hi') {
+            $content = ['type' => 'text', 'text' => $text ];
+        }
+        
+        
+        if ($content && array_filter($content) != null) {
+            $data = [
+                'replyToken' => $reply_token,
+                // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
+                'messages' => [$content]
+            ];
 
-        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+            $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
-        echo "Result: ".$send_result."\r\n";
+            $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+
+            echo "Result: ".$send_result."\r\n";
+        }
     }
 }
 
