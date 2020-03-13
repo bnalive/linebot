@@ -25,7 +25,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         if (strcmp($text, 'บริการของสยามเซอร์วิส') == 0) {
             $content = [['type' => 'image', 
                         'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaoJe.jpg', 
-                        'previewImageUrl' => 'hhttps://sv1.picz.in.th/images/2020/03/13/QBalDt.jpg' ]];
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBalDt.jpg' ]];
         } elseif (strcmp($text, 'บริการของแฟลชโฮม') == 0) {
             $content = [['type' => 'image', 
                         'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBasVv.jpg', 
