@@ -22,12 +22,32 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         $content = [];
-        if (strcmp($text, 'flash ค่าบริการ') == 0) {
-            $content = ['type' => 'image', 
-                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYeHuV.jpg', 
-                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/11/QYe8RN.jpg' ];
-        } elseif (strcmp($text, 'hi') == 0) {
-            $content = ['type' => 'text', 'text' => $text ];
+        if (strcmp($text, 'บริการของสยามเซอร์วิส') == 0) {
+            $content = [['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaoJe.jpg', 
+                        'previewImageUrl' => 'hhttps://sv1.picz.in.th/images/2020/03/13/QBalDt.jpg' ]];
+        } elseif (strcmp($text, 'บริการของแฟลชโฮม') == 0) {
+            $content = [['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBasVv.jpg', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaPEk.jpg' ]];
+        } elseif (strcmp($text, 'บริการของแอร์เพย์') == 0) {
+            $content = [['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaCYE.png', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBauRN.png' ],
+                       ['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBa6uV.png', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBanMQ.png' ]];
+        } elseif (strcmp($text, 'เมนูน้ำสมุนไพร') == 0) {
+            $content = [['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBae69.jpg', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaAhl.jpg' ]];
+        } elseif (strcmp($text, 'เมนู GATTO') == 0) {
+            $content = [['type' => 'image', 
+                        'originalContentUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBamMJ.jpg', 
+                        'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaF1b.jpg' ]];
+        } elseif (strcmp($text, 'เรียกพนักงาน @bnalive') == 0) {
+            $content = [['type' => 'text', 
+                        'text' => '@siamsupermart กำลังให้บริการ ครับ']];
         }
         
         
@@ -35,7 +55,7 @@ if ( sizeof($request_array['events']) > 0 ) {
             $data = [
                 'replyToken' => $reply_token,
                 // 'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]  Debug Detail message
-                'messages' => [$content]
+                'messages' => $content
             ];
 
             $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
