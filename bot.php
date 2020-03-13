@@ -47,7 +47,7 @@ if ( sizeof($request_array['events']) > 0 ) {
                         'previewImageUrl' => 'https://sv1.picz.in.th/images/2020/03/13/QBaF1b.jpg' ]];
         } elseif (strcmp($text, 'เรียกพนักงาน @bnalive') == 0) {
             $content = [['type' => 'text', 
-                        'text' => '@siamsupermart กำลังให้บริการ ครับ']];
+                        'text' => 'ขออภัยครับ เรายังไม่มีบริการในส่วนนี้']];
         }
         
         
